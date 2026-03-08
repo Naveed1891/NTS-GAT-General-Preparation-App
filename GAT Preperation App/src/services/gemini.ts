@@ -27,7 +27,7 @@ Guidelines:
 `;
 
   const response = await ai.models.generateContent({
-    model: 'gemini-3.1-pro-preview',
+    model: 'gemini-2.5-flash',
     contents: prompt,
     config: {
       responseMimeType: 'application/json',
@@ -91,7 +91,7 @@ Guidelines:
 `;
 
     const response = await ai.models.generateContent({
-      model: 'gemini-3.1-pro-preview',
+      model: 'gemini-2.5-flash',
       contents: prompt,
       config: {
         responseMimeType: 'application/json',
@@ -146,7 +146,7 @@ Guidelines:
 
 export const chatWithTutor = async (history: { role: 'user' | 'model'; parts: { text: string }[] }[], message: string) => {
   const chat = ai.chats.create({
-    model: 'gemini-3.1-pro-preview',
+    model: 'gemini-2.5-flash',
     config: {
       systemInstruction: 'You are an expert AI Tutor for the NTS GAT General Test. You help students understand concepts, provide step-by-step solutions, give shortcuts for quantitative problems, explain vocabulary, and recommend practice strategies. Be encouraging and clear.',
     },
@@ -160,7 +160,7 @@ export const chatWithTutor = async (history: { role: 'user' | 'model'; parts: { 
   contents.push({ role: 'user', parts: [{ text: message }] });
 
   const response = await ai.models.generateContent({
-    model: 'gemini-3.1-pro-preview',
+    model: 'gemini-2.5-flash',
     contents,
     config: {
       systemInstruction: 'You are an expert AI Tutor for the NTS GAT General Test. You help students understand concepts, provide step-by-step solutions, give shortcuts for quantitative problems, explain vocabulary, and recommend practice strategies. Be encouraging and clear.',
