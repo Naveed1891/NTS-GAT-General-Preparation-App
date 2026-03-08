@@ -1,7 +1,7 @@
 import { GoogleGenAI, Type } from '@google/genai';
 import { Question } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const ai = new GoogleGenAI(import.meta.env.VITE_GEMINI_API_KEY);
 
 export const generateQuestions = async (
   section: string,
